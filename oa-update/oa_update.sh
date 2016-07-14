@@ -130,7 +130,7 @@ if [ ! -f ${DRUPAL}/index.php ]; then
 fi
 
 # Check for required args.
-if [ ! ${UPGRADE_CODE} || ${SSH} ] && [ ! ${OA_VERSION} ]; then
+if [[ ! ${UPGRADE_CODE}  ||  ${SSH} ]] && [ ! ${OA_VERSION} ]; then
   error_exit $LINENO "You must provide at least one: '--oa-version=[version]' or '--bit-user=[user] OR --ssh=true'. You can use both --oa-version=[VERSION] and one of the others.."
 fi
 
@@ -264,7 +264,7 @@ if [ ${CONTINUE} = 1 ]; then
     ok "Done. "
   fi
 
-  if [ ${UPGRADE_CODE} ]; then
+  if [[ ${UPGRADE_CODE} && ! ${OA_VERSION} ]]; then
     ok "Running database updates... "
     ${DRUSH} updb -y
     ok "Reverting all features... "
