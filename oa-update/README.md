@@ -1,10 +1,10 @@
-Openatrium Upgrade Helper
+Openatrium Update Wrapper
 ---
 
 This is a script intended as a wrapper around the build.sh script located in
 the root of the Openatrium distro.
 
-This script references BitBucket but could easily be modified to use Github instead.
+This script is capable of using both BitBucket and Github.
 
 Run:
 
